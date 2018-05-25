@@ -26,3 +26,10 @@ There are several arguments allowing some control over the function's operation.
 source("hexwall.R")
 hexwall("samplehex", sticker_row_size = 3, sticker_width = 200)
 ```
+
+# Usage
+
+1. [Download the repository](https://github.com/mitchelloharawild/hexwall/archive/master.zip)
+2. Unzip and open the R project (`hexwall.Rproj`)
+3. Run `source("hexwall.R")`
+4. Ready to go, use the `hexwall()` function to make your hexagon wall.

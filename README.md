@@ -22,3 +22,11 @@ hexwall("samplehex", sticker_row_size = 3, sticker_width = 200)
 ```
 
 <img src="README_files/figure-markdown_github/example-1.png" width="600" />
+
+Usage
+=====
+
+1.  [Download the repository](https://github.com/mitchelloharawild/hexwall/archive/master.zip)
+2.  Unzip and open the R project (`hexwall.Rproj`)
+3.  Run `source("hexwall.R")`
+4.  Ready to go, use the `hexwall()` function to make your hexagon wall.
