@@ -1,0 +1,28 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# hexwall
+
+The `hexwall.R` file contains one function `gen_hexwall()`, which can be used to generate an image that neatly arranges a folder of hexagons.
+
+There are several arguments allowing some control over the function's operation.
+
+* path:             The path to a folder of hexagon stickers
+* sticker_row_size: The number of stickers in the longest row
+* sticker_width:    The width of each sticker in pixels
+* remove_small:     Should hexagons smaller than the sticker_width be removed?
+* remove_size:      Should hexagons of an abnormal size be removed?
+
+```{r example}
+source("hexwall.R")
+hexwall("samplehex", sticker_row_size = 3, sticker_width = 200)
+```
