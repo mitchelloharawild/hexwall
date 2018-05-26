@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 ```
 # hexwall
 
-The `hexwall.R` file contains one function `gen_hexwall()`, which can be used to generate an image that neatly arranges a folder of hexagons. It makes use of the [ImageMagick](https://www.imagemagick.org/) library via the ROpenSci package [magick](https://github.com/ropensci/magick) to arrange the images.
+The `hexwall.R` file contains one function `hexwall()`, which can be used to generate an image that neatly arranges a folder of hexagons. It makes use of the [ImageMagick](https://www.imagemagick.org/) library via the ROpenSci package [magick](https://github.com/ropensci/magick) to arrange the images.
 
 There are several arguments allowing some control over the function's operation.
 
