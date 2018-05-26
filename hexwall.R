@@ -42,15 +42,11 @@ hexwall <- function(path, sticker_row_size = 10, sticker_width = 200, remove_sma
     map(image_info) %>%
     map_dbl("height") %>%
     median
-  
   stickers <- stickers %>%
     map(image_resize, paste0(sticker_width, "x", sticker_height, "!"))
   
-  # Constuct canvas
-  sticker_col_size <- ceiling(length(stickers)/(sticker_row_size-0.5))
-  canvas <- image_blank(sticker_row_size*sticker_width, sticker_col_size*sticker_height/1.33526, "white")
-  
   # Arrange rows of stickers into images
+  sticker_col_size <- ceiling(length(stickers)/(sticker_row_size-0.5))
   row_lens <- rep(c(sticker_row_size,sticker_row_size-1), length.out=sticker_col_size)
   row_lens[length(row_lens)] <- row_lens[length(row_lens)]  - (length(stickers) - sum(row_lens))
   sticker_rows <- map2(row_lens, cumsum(row_lens),
