@@ -12,6 +12,9 @@ There are several arguments allowing some control over the function's operation.
 -   sticker\_width: The width of each sticker in pixels
 -   remove\_small: Should hexagons smaller than the sticker\_width be removed?
 -   remove\_size: Should hexagons of an abnormal size be removed?
+-   coords: A data.frame of coordinates defining the placement of hexagons
+-   scale\_coords: Should the coordinates be scaled to the hexagon size?
+-   sort\_mode: How should the files be sorted?
 
 ``` r
 source("hexwall.R")
