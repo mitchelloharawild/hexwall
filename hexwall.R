@@ -15,8 +15,18 @@ hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_sma
   sort_mode <- match.arg(sort_mode)
   
   # Load stickers
-  sticker_files <- list.files(path)
-  stickers <- file.path(path, sticker_files) %>% 
+  stickers <- c() # Initialize empty vector
+  for(p in path) { # Setup a loop to make it vectorized
+    if(tools::file_ext(p) == "") {
+      # Surely a folder name
+      stickers <- c(stickers, file.path(p, list.files(p)) )
+    } else {
+      # Surely a direct path, add it "as is"
+      stickers <- c(stickers, p)
+    }
+  }
+
+  stickers <- stickers %>% 
     map(function(path){
       switch(tools::file_ext(path),
              svg = image_read_svg(path),
@@ -25,7 +35,7 @@ hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_sma
     }) %>%
     map(image_transparent, "white") %>%
     map(image_trim) %>%
-    set_names(sticker_files)
+    set_names(stickers)
   
   # Low resolution stickers
   low_res <- stickers %>%
